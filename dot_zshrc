@@ -72,3 +72,31 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Keep Ghostty tab titles short without changing titles in other terminals.
+if [[ "${TERM_PROGRAM:-}" == "ghostty" ]]; then
+  autoload -Uz add-zsh-hook
+
+  _ghostty_short_title() {
+    local label relative
+
+    if [[ "$PWD" == "$HOME" ]]; then
+      label="~"
+    elif [[ "$PWD" == "$HOME"/* ]]; then
+      relative="${PWD#$HOME/}"
+      if [[ "$relative" == */* ]]; then
+        label="${PWD:t}"
+      else
+        label="~/$relative"
+      fi
+    else
+      label="${PWD:t}"
+      [[ -n "$label" ]] || label="/"
+    fi
+
+    printf '\e]2;%s\a' "$label"
+  }
+
+  add-zsh-hook precmd _ghostty_short_title
+  _ghostty_short_title
+fi

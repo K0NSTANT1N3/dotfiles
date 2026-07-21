@@ -4,14 +4,11 @@ local config = {}
 
 -- Font
 config.font = wezterm.font_with_fallback({
-	"FiraCode Nerd Font", -- thinner, normal width
+	{ family = "FiraCode Nerd Font", weight = "Light" },
 	"Noto Color Emoji",
 })
 config.font_size = 11
 config.harfbuzz_features = { "calt=1", "liga=1" }
-
--- optional: explicitly set weight
-config.font = wezterm.font("FiraCode Nerd Font", { weight = "Light" })
 
 -- ===========================
 -- Theme table
@@ -91,7 +88,7 @@ end
 
 -- Window
 config.window_background_opacity = 0.96
-config.text_background_opacity = 0.99
+config.text_background_opacity = 1
 config.window_padding = { left = 6, right = 6, top = 4, bottom = 4 }
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = false

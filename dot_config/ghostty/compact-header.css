@@ -1,0 +1,70 @@
+/* Compact, WezTerm-like integrated titlebar. */
+window headerbar,
+window headerbar.titlebar {
+  min-height: 18px;
+  margin: 0;
+  padding: 0 2px;
+  background-color: @window_bg_color;
+  background-image: none;
+}
+
+/* Adwaita gives nested controls generous minimum sizes by default. */
+window headerbar *,
+window headerbar windowhandle,
+window headerbar windowhandle > box,
+window headerbar > box,
+window headerbar tabbar,
+window headerbar tabbox,
+window headerbar tab,
+window headerbar .tab {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+window headerbar windowcontrols {
+  min-height: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+window headerbar windowcontrols button,
+window headerbar button {
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0 1px;
+  padding: 0;
+  border-radius: 3px;
+}
+
+window headerbar windowcontrols button image {
+  -gtk-icon-size: 10px;
+}
+
+window headerbar .title {
+  font-size: 0.82em;
+}
+
+/* Keep integrated tabs in the same compact row. */
+tabbar,
+tabbar tabbox,
+tabbar tab,
+tabbar .tab,
+tabbar tab > box,
+tabbar .tab > box {
+  min-height: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+tabbar tab {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 2px;
+}
+
+tabbar label {
+  font-size: 0.82em;
+}

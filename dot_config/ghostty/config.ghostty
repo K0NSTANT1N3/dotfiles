@@ -1,0 +1,40 @@
+# A readable coding face with Nerd Font glyphs.
+font-family = FiraCode Nerd Font
+font-style = Regular
+font-size = 11
+font-feature = calt
+font-feature = liga
+
+background-opacity = 0.96
+background-opacity-cells = false
+background-blur = false
+
+window-padding-x = 5
+window-padding-y = 8
+window-padding-balance = true
+window-padding-color = background
+window-theme = dark
+window-decoration = auto
+window-width = 72
+window-height = 23
+
+# Integrate tabs into the title bar to save vertical space.
+gtk-titlebar-style = tabs
+
+# Let tmux provide compact titles such as "1: …/project" instead of
+# Ghostty replacing them with "user@host:working-directory".
+shell-integration-features = cursor,no-sudo,no-title,no-ssh-env,no-ssh-terminfo,path
+
+cursor-style = bar
+cursor-style-blink = true
+cursor-opacity = 0.95
+mouse-hide-while-typing = true
+
+minimum-contrast = 1.1
+unfocused-split-opacity = 0.9
+scrollback-limit = 10000000
+copy-on-select = clipboard
+confirm-close-surface = true
+
+# switch_theme.sh replaces this file and asks Ghostty to reload.
+config-file = current-theme.ghostty
