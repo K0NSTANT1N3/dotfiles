@@ -41,10 +41,8 @@ if [[ -d /usr/share/grc ]] && command -v grc >/dev/null 2>&1; then
     command -v "$cmd" >/dev/null 2>&1 && alias "$cmd"="grc $cmd"
   done
 fi
-
-
 # This ensures only commands that exist in grc configs are wrapped
-# Unknown commands will fall back to Zsh’s default behavior (apt suggestions work!)
+# Unknown commands will fall back to Zsh's default behavior (apt suggestions work!)
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -65,9 +63,6 @@ fi
 if [[ -r "$HOME/miniconda3/etc/profile.d/conda.sh" ]]; then
   source "$HOME/miniconda3/etc/profile.d/conda.sh"
 fi
-
-
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -100,3 +95,20 @@ if [[ "${TERM_PROGRAM:-}" == "ghostty" ]]; then
   add-zsh-hook precmd _ghostty_short_title
   _ghostty_short_title
 fi
+
+# =========================================
+# tmux auto-theme wrapper
+# =========================================
+tmux() {
+    if [ -z "$TMUX" ]; then
+        if command tmux has-session -t main 2>/dev/null; then
+            command tmux attach-session -t main
+        else
+            command tmux new-session -d -s main
+            command tmux source-file ~/.config/tmux/current-theme.tmux
+            command tmux attach-session -t main
+        fi
+    else
+        command tmux "$@"
+    fi
+}
