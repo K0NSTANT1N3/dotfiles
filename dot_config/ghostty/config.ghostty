@@ -14,12 +14,13 @@ window-padding-y = 8
 window-padding-balance = true
 window-padding-color = background
 window-theme = dark
-window-decoration = auto
+window-decoration = false
 window-width = 72
 window-height = 23
 
 # Integrate tabs into the title bar to save vertical space.
 gtk-titlebar-style = tabs
+gtk-wide-tabs = false
 
 # Let tmux provide compact titles such as "1: …/project" instead of
 # Ghostty replacing them with "user@host:working-directory".
@@ -38,3 +39,5 @@ confirm-close-surface = true
 
 # switch_theme.sh replaces this file and asks Ghostty to reload.
 config-file = current-theme.ghostty
+
+
