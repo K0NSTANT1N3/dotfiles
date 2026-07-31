@@ -128,6 +128,6 @@ config.keys = {
 	{ key = "O", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 }
 
-config.front_end = "WebGpu"
+config.front_end = "OpenGL"
 
 return config

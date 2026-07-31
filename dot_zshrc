@@ -112,3 +112,18 @@ tmux() {
         command tmux "$@"
     fi
 }
+
+# =========================================
+# yazi: force Kitty graphics protocol inside tmux+WezTerm
+# =========================================
+# yazi hardcodes WezTerm to the iTerm2 image protocol, which has no
+# placeholder-cell representation and gets wiped by tmux's own redraws.
+# Ghostty maps to the real Kitty graphics protocol, which WezTerm also
+# genuinely supports, so faking the brand here fixes image previews.
+yazi() {
+    if [[ -n "$TMUX" && -n "$WEZTERM_EXECUTABLE" ]]; then
+        TERM_PROGRAM=ghostty command yazi "$@"
+    else
+        command yazi "$@"
+    fi
+}

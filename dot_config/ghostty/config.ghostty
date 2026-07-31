@@ -5,6 +5,8 @@ font-size = 11
 font-feature = calt
 font-feature = liga
 
+term = xterm-256color
+
 background-opacity = 0.96
 background-opacity-cells = false
 background-blur = false
@@ -14,7 +16,7 @@ window-padding-y = 8
 window-padding-balance = true
 window-padding-color = background
 window-theme = dark
-window-decoration = false
+window-decoration = true
 window-width = 72
 window-height = 23
 
@@ -31,11 +33,14 @@ cursor-style-blink = true
 cursor-opacity = 0.95
 mouse-hide-while-typing = true
 
-minimum-contrast = 1.1
+minimum-contrast = 1.0
 unfocused-split-opacity = 0.9
 scrollback-limit = 10000000
 copy-on-select = clipboard
 confirm-close-surface = true
+
+# Keeps trackpad speed reasonable while boosting the mouse wheel
+mouse-scroll-multiplier = 4
 
 # switch_theme.sh replaces this file and asks Ghostty to reload.
 config-file = current-theme.ghostty
