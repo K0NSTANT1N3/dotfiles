@@ -28,7 +28,10 @@ set -g clock-mode-colour "#51afef"
 
 set -g status-left "#[fg=#0b0f1a,bg=#c678dd,bold] ❐ #S #[fg=#d0d0d0,bg=#151b2b,nobold]"
 setw -g window-status-current-style "bg=#51afef,fg=#0b0f1a,bold"
-set -g status-right "#[fg=#0b0f1a,bg=#ecbe7b,bold] %H:%M #[fg=#0b0f1a,bg=#46d9ff,bold] %d %b "
+tmux_conf_theme_status_right=' %H:%M | %d %b '
+tmux_conf_theme_status_right_fg="#0b0f1a,#0b0f1a"
+tmux_conf_theme_status_right_bg="#ecbe7b,#46d9ff"
+tmux_conf_theme_status_right_attr="bold,bold"
 
 set -g message-style "fg=#d0d0d0,bg=#151b2b,bold"
 set -g message-command-style "fg=#d0d0d0,bg=#151b2b,bold"

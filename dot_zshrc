@@ -127,3 +127,9 @@ yazi() {
         command yazi "$@"
     fi
 }
+
+# opencode
+export PATH=/home/konstantine/.opencode/bin:$PATH
+
+# for go
+export PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"

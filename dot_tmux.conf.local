@@ -95,6 +95,11 @@ tmux_conf_urlscan_options="--compact --dedupe"
 set -g default-terminal "tmux-256color"
 set -as terminal-features ",*:RGB"
 
+# Allow image protocol escape sequences (Kitty graphics, used by WezTerm/Ghostty)
+# to pass through tmux so yazi's image previews render
+set -g allow-passthrough on
+set -g update-environment "DISPLAY KRB5CCNAME MSYSTEM SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WAYLAND_DISPLAY WINDOWID XAUTHORITY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE TERM TERM_PROGRAM"
+
 # Increase history size
 set -g history-limit 50000
 
@@ -112,6 +117,7 @@ unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
 
+set-option -g status-position top
 
 # -- tpm plugins ---------------------------------------------------------------
 
