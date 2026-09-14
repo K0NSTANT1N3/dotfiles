@@ -10,6 +10,11 @@ vim.opt.softtabstop = 4
 
 vim.g.autoformat = false
 
--- Keep Vim commands on their physical QWERTY positions while typing with
--- Colemak or Georgian. This also follows XKB layout changes on X11.
-require("config.keyboard_layout").setup()
+-- Change this one line to enable physical-QWERTY commands for Colemak/Georgian.
+vim.g.physical_qwerty_keys = false
+
+if vim.g.physical_qwerty_keys then
+  require("config.keyboard_layout").setup()
+else
+  vim.opt.langmap = ""
+end

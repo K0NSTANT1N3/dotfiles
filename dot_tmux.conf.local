@@ -135,4 +135,11 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 # Source the current theme configuration dynamically if present
 if-shell '[ -f ~/.config/tmux/current-theme.tmux ]' 'source-file ~/.config/tmux/current-theme.tmux'
 
+# Change this one line to enable physical-QWERTY keys for Colemak/Georgian.
+set -g @physical_qwerty_keys off
+
+if-shell -F '#{==:#{@physical_qwerty_keys},on}' \
+  'run-shell -b "exec python3 \"$HOME/.config/tmux/physical_qwerty.py\" \"#{socket_path}\""' \
+  'run-shell -b "exec python3 \"$HOME/.config/tmux/physical_qwerty.py\" --disable \"#{socket_path}\""'
+
 # EOF
