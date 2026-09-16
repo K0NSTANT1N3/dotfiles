@@ -1,0 +1,21 @@
+set disassembly-flavor intel
+
+python
+import os
+import types
+
+import gdb
+
+if not hasattr(gdb, "types"):
+    def _has_field(gdb_type, field_name):
+        try:
+            return any(field.name == field_name for field in gdb_type.fields())
+        except Exception:
+            return False
+
+    gdb.types = types.SimpleNamespace(has_field=_has_field)
+
+pwndbg_init = "/opt/pwndbg/gdbinit.py"
+if os.path.isfile(pwndbg_init):
+    gdb.execute(f"source {pwndbg_init}")
+end

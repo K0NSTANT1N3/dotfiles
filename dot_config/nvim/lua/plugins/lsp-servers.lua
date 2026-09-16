@@ -14,6 +14,7 @@ return {
     event = { "BufReadPre", "BufNewFile" }, -- load only when opening a file
     opts = {
       servers = {
+        gopls = {},
         pyright = { filetypes = { "python" } },
         jdtls = { filetypes = { "java" } },
         clangd = {
