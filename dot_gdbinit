@@ -15,7 +15,7 @@ if not hasattr(gdb, "types"):
 
     gdb.types = types.SimpleNamespace(has_field=_has_field)
 
-pwndbg_init = "/opt/pwndbg/gdbinit.py"
+pwndbg_init = os.path.expanduser("~/.local/share/pwndbg/gdbinit.py")
 if os.path.isfile(pwndbg_init):
     gdb.execute(f"source {pwndbg_init}")
 end
