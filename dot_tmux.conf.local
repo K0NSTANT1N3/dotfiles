@@ -91,6 +91,9 @@ tmux_conf_urlscan_options="--compact --dedupe"
 
 # -- user customizations -------------------------------------------------------
 
+# Keep configuration helpers on this server when launched from another tmux.
+set-environment -gF TMUX_SOCKET "#{socket_path}"
+
 # Modern terminal 24-bit True Color support
 set -g default-terminal "tmux-256color"
 set -as terminal-features ",*:RGB"

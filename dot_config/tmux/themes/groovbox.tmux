@@ -12,18 +12,33 @@ tmux_conf_theme_colour_10="#d3869b"   # Magenta Accent
 tmux_conf_theme_colour_11="#b8bb26"   # Green Accent
 tmux_conf_theme_colour_12="#32302f"   # Status bar bg (shade of colour_1 #282828)
 
-set -g status-style "bg=#32302f,fg=#dcd7ba"
-setw -g window-status-style "bg=#32302f,fg=#928374"
-set -g pane-active-border-style "fg=#83a598"
-setw -g mode-style "bg=#504945,fg=default"
-set -g clock-mode-colour "#83a598"
+tmux_conf_theme_status_bg="#32302f"
+tmux_conf_theme_status_fg="#dcd7ba"
+tmux_conf_theme_status_attr="none"
+tmux_conf_theme_window_status_bg="#32302f"
+tmux_conf_theme_window_status_fg="#928374"
+tmux_conf_theme_window_status_attr="none"
+tmux_conf_theme_pane_active_border_fg="#83a598"
+tmux_conf_theme_mode_bg="#504945"
+tmux_conf_theme_mode_fg="default"
+tmux_conf_theme_mode_attr="none"
+tmux_conf_theme_clock_colour="#83a598"
 
-set -g status-left "#[fg=#282828,bg=#d3869b,bold] ❐ #S #[fg=#dcd7ba,bg=#32302f,nobold]"
-setw -g window-status-current-style "bg=#83a598,fg=#282828,bold"
+tmux_conf_theme_status_left=' ❐ #S '
+tmux_conf_theme_status_left_fg="#282828"
+tmux_conf_theme_status_left_bg="#d3869b"
+tmux_conf_theme_status_left_attr="bold"
+tmux_conf_theme_window_status_current_bg="#83a598"
+tmux_conf_theme_window_status_current_fg="#282828"
+tmux_conf_theme_window_status_current_attr="bold"
 tmux_conf_theme_status_right=' %H:%M | %d %b '
 tmux_conf_theme_status_right_fg="#282828,#282828"
 tmux_conf_theme_status_right_bg="#d79921,#fabd2f"
 tmux_conf_theme_status_right_attr="bold,bold"
 
-set -g message-style "fg=#dcd7ba,bg=#32302f,bold"
-set -g message-command-style "fg=#dcd7ba,bg=#32302f,bold"
+tmux_conf_theme_message_fg="#dcd7ba"
+tmux_conf_theme_message_bg="#32302f"
+tmux_conf_theme_message_attr="bold"
+tmux_conf_theme_message_command_fg="#dcd7ba"
+tmux_conf_theme_message_command_bg="#32302f"
+tmux_conf_theme_message_command_attr="bold"

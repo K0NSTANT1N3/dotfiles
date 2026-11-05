@@ -100,16 +100,10 @@ fi
 # tmux auto-theme wrapper
 # =========================================
 tmux() {
-    if [ -z "$TMUX" ]; then
-        if command tmux has-session -t main 2>/dev/null; then
-            command tmux attach-session -t main
-        else
-            command tmux new-session -d -s main
-            command tmux source-file ~/.config/tmux/current-theme.tmux
-            command tmux attach-session -t main
-        fi
-    else
+    if (( $# > 0 )) || [[ -n "$TMUX" ]]; then
         command tmux "$@"
+    else
+        command tmux new-session -A -s main
     fi
 }
 
@@ -133,3 +127,7 @@ export PATH=/home/konstantine/.opencode/bin:$PATH
 
 # for go
 export PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/konstantine/.local/bin:$PATH"

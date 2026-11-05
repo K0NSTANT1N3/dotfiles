@@ -18,3 +18,7 @@ if vim.g.physical_qwerty_keys then
 else
   vim.opt.langmap = ""
 end
+
+-- Horizontal scrolling (wrap is off): scroll one column at a time instead of
+-- jumping half a screen when the cursor (plus inlay hints) passes the right edge.
+vim.opt.sidescroll = 1
